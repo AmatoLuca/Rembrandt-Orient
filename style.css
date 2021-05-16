@@ -60,7 +60,7 @@ h1, h2, h3, h4 {
   position: fixed;
   z-index: 10;
   width: 100%;
-  min-height: 10vh;
+  min-height: 5rem;
   padding: 1em;
   background-color: var(--dirty-white-2);
 }
@@ -69,6 +69,7 @@ h1, h2, h3, h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 0.5rem;
 }
 
 .logo {
@@ -211,7 +212,6 @@ h1, h2, h3, h4 {
 
 .description__top > p,
 .description__bottom > p {
-  background-color: var(--dirty-white); 
   text-align: justify;
 }
 
