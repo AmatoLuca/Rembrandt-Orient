@@ -1,0 +1,501 @@
+/* PAGE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* GENERAL */
+html {
+  --text-color: #35393d;
+  --heading-color: #212529;
+  --total-white: #fff;
+  --dirty-white-2: #f0f0f0;
+  --dirty-white-3: #f8f8f8;
+  --dirty-white: #fff7f7;
+  --grey: #777777;
+  --grey-medium: #9d9d9d;
+  --grey-medium-lighter: #969292;
+  --grey-smoke: #2b2b2b;
+  --grey-smoke-lighter: #383535;
+  --flamingo: #db5f5f;
+
+  --font-large: 2.6rem;
+  --font-medium: 2rem;
+  --font-intermedie: 1.5em;
+  --font-small: 0.875rem;
+
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--total-white);
+  line-height: 1.4;
+  letter-spacing: 0.012em;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Spectral', sans-serif;
+  color: var(--heading-color);
+  letter-spacing: -0.03em;
+}
+
+.page-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* NAV-CONTAINER MODULE */
+.nav-container {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  min-height: 10vh;
+  padding: 1em;
+  background-color: var(--dirty-white-2);
+}
+
+.nav-container__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: var(--font-small);
+  font-weight: 600;
+}
+
+
+/* TOP-MENU MODULE */
+.top-menu {
+  display: flex;
+  align-items: center;
+}
+
+.top-menu__search {
+  display: none;
+}
+
+
+/* TOGGLE MODULE */
+.toggle {
+  position: relative;
+  z-index: 12;
+  cursor: pointer;
+  color: #3d3d3d;
+  transition: color 0.3s linear;
+}
+
+.toggle:hover,
+.toggle:active {
+  color: var(--grey); 
+}
+
+.toggle > span {
+  padding-left: 0.5em;
+  vertical-align: super;
+} 
+
+/* OVERLAYER-MENU MODULE */
+.overlayer-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%; 
+  background-color: var(--dirty-white);
+  overflow: hidden;  
+  opacity: 0;
+  margin-top: -100vh;
+  transition: all 0.2s linear;
+  z-index: 10;
+}
+
+.is-open {
+  opacity: 1;
+  margin-top: 0;
+}
+
+.overlayer-menu__top-bar {
+  padding: 1em;
+  margin-bottom: 15vh;
+}
+
+.overlayer-menu__close {
+  cursor: pointer;
+}
+
+.overlayer-menu__close > span {
+  padding-left: 0.3em;
+  transition: color 0.2s linear;
+}
+
+.overlayer-menu__close > span:hover {
+  color: var(--grey);
+}
+
+.overlayer-menu__inner__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  font-size: var(--font-intermedie);
+  height: 100vh;
+}
+
+.overlayer-menu__inner__items > li {
+  padding-bottom: 0.2em;
+  font-weight: bolder;
+}
+
+.overlayer-menu__inner__items > li > a {
+  text-decoration: none;
+  color: #383535;
+  transition: color 0.2s linear;
+}
+
+.overlayer-menu__inner__items > li > a:hover {
+  color: var(--grey-medium);
+}
+
+
+/* HERO MODULE */
+.hero {
+  background: url('./images/rembrandt-hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh; 
+  margin-bottom: 1.5em;
+}
+
+
+/* DESCRIPTION MODULE */
+.description {
+  margin: 0 1rem;
+}
+
+.description__title {
+  font-weight: 700;
+  margin-bottom: 0.8em;
+  font-size: var(--font-large);
+  line-height: 1.1;
+}
+
+.description__top {
+  margin-top: 0.5em;
+}
+
+.description__top::after {
+  display: block;
+  content: "";
+  width: 80%;
+  height: 1px;
+  background-color: var(--grey-medium-lighter);
+  margin: 1.5rem auto;
+}
+
+.description__top > p,
+.description__bottom > p {
+  background-color: var(--dirty-white); 
+  text-align: justify;
+}
+
+.description__bottom span {
+  font-weight: bolder;
+}
+
+/* GALLERY MODULE */
+.gallery {
+ margin-top: 2em;
+ margin-left: 1rem;
+ margin-right: 1rem;
+}
+
+.gallery-title {
+  padding: 0.8em 0;
+  font-size: var(--font-medium);
+}
+
+
+/* CARD MODULE */
+.card {
+  position: relative;
+  margin-bottom: 0.8em;
+}
+
+.card__img  {
+  overflow: hidden;
+}
+
+.card__img > a {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--flamingo);
+}
+
+.card__img > a > img {
+  max-width: 100%;
+  object-fit: cover; 
+}
+
+.card__img > a > img:hover {
+  mix-blend-mode: hard-light;
+} 
+
+.card__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--dirty-white-3);
+  color: var(--text-color);
+  width: 100%;
+  height: 25%;
+  padding: 1em 0;
+}
+
+.card__caption__title {
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
+
+.card__caption__sub {
+  font-size: var(--font-small); 
+  color: #2b2b2b;
+}
+
+
+/* INFO-CONTAINER */
+.info-container {
+  margin: 1rem 1rem 2rem 1rem;
+  background-color: var(--dirty-white-2);
+}
+
+.info-container-block > h2 {
+  margin: 1rem 0;
+}
+
+.info__box  > h4 {
+  color: var(--grey-smoke-lighter);
+}
+
+.info-list {
+  list-style: none;
+  font-size: var(--font-small);
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* GENERIC MODULE */
+.generic {
+  background-image: url(./images/catalog-order.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35vh;
+  margin: 0 -1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BUTTON MODULE */
+.button {
+  background-color: transparent;
+  color: var(--total-white);
+  border: 1px solid var(--total-white);
+  padding: 1rem 2rem;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-size: var(--font-small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0000004d;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  border: 1px solid;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: border 0.1s linear;
+}
+
+.button:hover::before {
+  border: 3px solid;
+}
+
+/* FOOTER MODULE*/
+.footer {
+  position: relative;
+  margin: 0 -1rem;
+  padding: 1rem;
+  color: var(--grey-smoke);
+  background-color: var(--dirty-white-2);
+}
+
+.footer::before {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 1px;
+  background-color: var(--grey-medium-lighter);
+  margin: 0 auto;
+}
+
+.footer__inner {
+  padding: 2rem 1rem 1rem;
+}
+
+.footer__items {
+  list-style: none;
+}
+
+.footer__items > li > a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.2s linear;
+}
+
+.footer__items > li > a:hover {
+  color: var(--grey-medium-lighter);
+} 
+
+.footer-subscribe {
+  margin: 1.5rem 0;
+  font-size: var(--font-intermedie);
+}
+
+.footer-subscribe > a {
+  color: inherit;
+  font-weight: bolder;
+}
+
+.footer-subscribe > a:hover {
+  color: var(--grey-medium-lighter);
+}
+
+.footer-subscribe > svg {
+  margin-left: 0.5rem;
+  vertical-align: sub;
+}
+
+.rights {
+  text-align: center;
+  font-size: var(--font-small);
+}
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 576px) {
+  .description {
+    margin: 0 3rem;
+  }
+
+  .description__title {
+    margin-top: 1.1em;
+  }
+
+  .description__top::after {
+    display: none;
+  }
+
+  .description__top {
+    padding-bottom: 2rem;
+  }
+
+  .gallery-title {
+    text-align: center;
+    margin: 2.5em 0 0;
+  }
+
+  .gallery-container {
+    margin: 0 2rem;
+  }
+
+  .card__caption {
+    height: 25%;
+  }
+
+  .info-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .description {
+    margin: 0 6rem;
+  }
+
+  .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card {
+    flex: 1 1 40%;
+    margin: 0.5em;
+  }
+
+  .card__caption {
+    height: 20%;
+  }
+
+  .generic {
+    height: 50vh;
+    margin-bottom: 3rem;
+  }
+
+  .footer__inner {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .rights {
+    margin-top: 1rem;
+  }
+
+  .card__caption {
+    height: 30%;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+  .description {
+    margin: 0 9rem;
+  }
+
+  .card__caption {
+    height: 25%;
+  }
+}
