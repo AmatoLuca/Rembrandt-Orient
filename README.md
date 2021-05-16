@@ -28,4 +28,4 @@
 
 <br><br>
 
-### To see the project: rembrandt-orient.netlify.app
+### To see the project: [a relative link] rembrandt-orient.netlify.app
